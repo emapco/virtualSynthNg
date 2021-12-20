@@ -1,0 +1,61 @@
+<!-- Filter component header div -->
+<div class="center-container-header input-container">
+  <p>Filter</p>
+  <div class="test">
+    <button *ngFor="let osc of oscService.oscillators" (click)="changeFilter(osc)">
+      Osc {{osc.id}}
+    </button>
+  </div>
+</div>
+<div class="center-container input-container">
+  <div class="filter-component">
+    <!-- enable filter -->
+    <label class="unselectable">
+    <input type="checkbox" [(ngModel)]="filter.enabled">
+      Enable</label>
+    <br>
+    <!-- select filter type -->
+    <label>Type</label>
+    <select [ngModel]="filter.type" (ngModelChange)="filter.type=$event.toLowerCase()">
+      <option *ngFor="let filter of filterTypes" [value]="filter">
+        {{ filter | titlecase }}
+      </option>
+    </select>
+  </div>
+  <!-- change filter gain -->
+  <div class="filter-component center">
+    <label>Gain</label>
+    <mat-slider
+      [(ngModel)]="filter.gain"
+      thumbLabel
+      min="-40"
+      [vertical]="true"
+      max="40">
+    </mat-slider>
+  </div>
+  <!-- change cutoff frequency -->
+  <div class="filter-component center">
+    <label>Frequency</label>
+    <mat-slider
+      [displayWith]="formatFrequency"
+      [ngModel]="displaySliderFreq"
+      (ngModelChange)="filter.frequency=updateFrequency($event)"
+      thumbLabel
+      step=".01"
+      min="1"
+      [vertical]="true"
+      max="100">
+    </mat-slider>
+  </div>
+  <!-- change q factor -->
+  <div class="filter-component center">
+    <label class="form-label">Q</label>
+    <mat-slider
+      [(ngModel)]="filter.qFactor"
+      thumbLabel
+      min="0"
+      [vertical]="true"
+      max="1000">
+    </mat-slider>
+  </div>
+</div>

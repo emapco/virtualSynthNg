@@ -1,0 +1,53 @@
+kbd {
+  border-radius: .7em;
+  text-align: center;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#white-keys-container kbd {
+  background: #f8f9fa;
+  color: #212529;
+  border: solid #8f5e31;
+  padding-top: 250px;
+  border: solid rgba(33, 37, 41, 0);
+  -webkit-background-clip: padding-box; /* for Safari */
+  background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+
+#black-keys-container kbd {
+  background: #212529;
+  color: #f8f9fa;
+  padding-top: 160px;
+  z-index: 2;
+  border: solid rgba(33, 37, 41, 0);
+  -webkit-background-clip: padding-box; /* for Safari */
+  background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+}
+
+#white-keys-container, #black-keys-container  {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+#black-keys-container {
+  position: relative;
+  left: 20px;
+  top: 180px;
+}
+
+.blank-key {
+  opacity: 0;
+  font-size: .55em; /*So TYU keys are aligned properly */
+}
+
+.key-container {
+  text-align: center;
+}

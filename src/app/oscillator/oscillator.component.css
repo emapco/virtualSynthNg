@@ -1,0 +1,12 @@
+.octaveDisplay {
+  text-align: center;
+  flex-grow: 2;
+}
+
+.octave-button {
+  flex-grow: 1;
+}
+
+label {
+  padding: 1.25vh 0 .5vh;
+}

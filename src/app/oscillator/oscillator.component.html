@@ -1,0 +1,53 @@
+<div class="input-container">
+  <!-- enable oscillator-->
+  <div class="input-container-horizontal">
+    <label class="unselectable">
+    <input type="checkbox" [(ngModel)]="osc.on">
+      Oscillator {{osc.id}}
+    </label>
+  </div>
+  <!-- select wave -->
+  <label><u>Wave</u></label>
+  <select [ngModel]="osc.wave" (ngModelChange)="osc.wave=$event.toLowerCase()">
+    <option *ngFor="let wave of waves" [value]="wave">
+      {{ wave | titlecase }}
+    </option>
+  </select>
+  <!-- changes gain -->
+  <div class="input-container-horizontal">
+    <label><u>Gain</u><br>
+    <mat-slider
+      [(ngModel)]="osc.gain"
+      thumbLabel
+      tickInterval="1"
+      step=".1"
+      min="0"
+      max="100"
+      aria-label="units"></mat-slider>
+    </label>
+  </div>
+  <!-- change octave -->
+  <label class=""><u>Octave</u></label>
+  <div class="input-container-horizontal">
+    <button type="button" class="octave-button"
+            (click)="changeOctave(octaveEnums.OCTAVE_DECREASE) ">&#8595;</button>
+    <label id="octave-label1" class="octaveDisplay">{{ displayOctave }}</label>
+    <button type="button" class="octave-button"
+            (click)="changeOctave(octaveEnums.OCTAVE_INCREASE) ">&#8593;</button>
+  </div>
+  <!-- enable and change detune -->
+  <label>
+    <input type="checkbox" [(ngModel)]="osc.detuneEnabled">
+    Detune
+  </label>
+  <mat-slider
+    *ngIf="osc.detuneEnabled"
+    [(ngModel)]="osc.detune"
+    thumbLabel
+    tickInterval=".1"
+    step=".5"
+    min="-100"
+    max="100"
+    aria-label="units">
+  </mat-slider>
+</div>

@@ -1,0 +1,16 @@
+#main {
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+:host{
+  background: url("https://raw.githubusercontent.com/emapco/virtualSynth/master/img/wood.png") center;
+  position: fixed;
+  top:0;
+  left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: auto;
+}

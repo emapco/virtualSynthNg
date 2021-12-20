@@ -1,0 +1,34 @@
+.center-container-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2em 1em 0 1em;
+  padding: 1em 1em 0;
+}
+
+.test {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.center-container {
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.filter-component {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1em .5em 0 .5em;
+  margin-bottom: 1vh;
+}
+
+button {
+  margin: 0 .5vw 0;
+  padding: 1vh .5vw 1vh;
+}
