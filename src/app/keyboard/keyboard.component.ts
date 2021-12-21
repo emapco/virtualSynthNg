@@ -8,7 +8,8 @@ import {PlayNoteService} from "../shared/play-note.service";
   providers: [PlayNoteService]
 })
 export class KeyboardComponent {
-
+  // boolean to prevent touch event from triggering touchstart and mousedown thus playing note twice
+  private previousEventTouch: boolean = false;
   constructor(private playNoteSer: PlayNoteService) {
   }
 
@@ -23,9 +24,12 @@ export class KeyboardComponent {
   @HostListener('touchstart', ['$event'])
   @HostListener('mousedown', ['$event'])
   handleClickTouchEvent(event: TouchEvent | MouseEvent) {
-    let element = event.target as HTMLElement;
-    if (element.tagName === "KBD") {
-      this.playNoteSer.playNotes(element.innerText);
+    if (!this.previousEventTouch) {
+      let element = event.target as HTMLElement;
+      if (element.tagName === "KBD") {
+        this.playNoteSer.playNotes(element.innerText);
+      }
     }
+    this.previousEventTouch = (event.type === 'touchstart');
   }
 }
