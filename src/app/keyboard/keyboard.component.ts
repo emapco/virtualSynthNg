@@ -19,4 +19,11 @@ export class KeyboardComponent {
       this.playNoteSer.playNotes(parseEventKey);
     }
   }
+  @HostListener('touchstart', ['$event'])
+  handleTouchEvent(event: TouchEvent) {
+    let element = event.target as HTMLElement;
+    if (element.tagName === "KBD") {
+      this.playNoteSer.playNotes(element.innerText);
+    }
+  }
 }

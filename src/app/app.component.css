@@ -4,7 +4,7 @@
 }
 
 :host{
-  background: url("https://raw.githubusercontent.com/emapco/virtualSynth/master/img/wood.png") center;
+  background: url("../assets/img/wood.png") center;
   position: fixed;
   top:0;
   left: 0;
