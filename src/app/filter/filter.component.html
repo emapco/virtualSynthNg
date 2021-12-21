@@ -28,6 +28,7 @@
     <mat-slider
       [(ngModel)]="filter.gain"
       thumbLabel
+      tickInterval="1"
       min="-40"
       [vertical]="true"
       max="40">
@@ -41,7 +42,8 @@
       [ngModel]="displaySliderFreq"
       (ngModelChange)="filter.frequency=updateFrequency($event)"
       thumbLabel
-      step=".01"
+      step=".05"
+      tickInterval="1"
       min="1"
       [vertical]="true"
       max="100">
@@ -53,6 +55,7 @@
     <mat-slider
       [(ngModel)]="filter.qFactor"
       thumbLabel
+      tickInterval="1"
       min="0"
       [vertical]="true"
       max="1000">

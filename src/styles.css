@@ -45,3 +45,7 @@ button {
   height: 5vh;
   color: white !important;
 }
+
+.mat-slider-thumb-label-text {
+  color: white !important;
+}
