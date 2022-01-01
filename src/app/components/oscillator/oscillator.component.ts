@@ -1,8 +1,8 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Oscillator} from "./oscillator";
-import {OctaveEnum} from "../enums/octave.enum";
-import {OscillatorService} from "../shared/oscillator.service";
-import {OctavePipe} from "../shared/octave.pipe";
+import {OctaveEnum} from "../../enums/octave.enum";
+import {OscillatorService} from "../../shared/oscillator.service";
+import {OctavePipe} from "../../shared/octave.pipe";
 
 @Component({
   selector: 'app-oscillator',

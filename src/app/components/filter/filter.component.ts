@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Filter} from "./filter";
-import {OscillatorService} from "../shared/oscillator.service";
+import {OscillatorService} from "../../shared/oscillator.service";
 import {Oscillator} from "../oscillator/oscillator";
 
 @Component({

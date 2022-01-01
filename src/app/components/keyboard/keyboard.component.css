@@ -49,5 +49,6 @@ kbd {
 }
 
 .key-container {
+  touch-action: manipulation;  /* prevents double tap zoom */
   text-align: center;
 }
